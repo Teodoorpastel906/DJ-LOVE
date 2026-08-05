@@ -17,8 +17,8 @@ import subprocess
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-ARCHIVE_DIR = Path.home() / "Music" / "BIXY DJ"
-STATE_FILE = ARCHIVE_DIR / ".music_state.json"
+ARCHIVE_DIR = Path.home() / "Music" / "DJ-LOVE"
+STATE_FILE = ARCHIVE_DIR / ".state.json"
 SPOTIFY_CACHE = Path.home() / "Music" / "Archive" / "spotify" / ".spotify_oauth_cache"
 COOKIES_FILE = ARCHIVE_DIR / ".yt_cookies.txt"
 
