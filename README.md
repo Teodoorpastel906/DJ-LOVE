@@ -187,3 +187,10 @@ A: 暂不支持。欢迎 PR。
 ## 📄 License
 
 MIT © 2024 — 仅供个人使用，请遵守各平台服务条款。
+
+---
+
+<!-- 搜索关键词 / Search Keywords -->
+<!-- Spotify downloader, SoundCloud downloader, MP3 downloader, music archiver, -->
+<!-- 自动下载, 音乐归档, DJ tools, 定时下载, 收藏下载, liked songs downloader, -->
+<!-- automated music download, weekly music backup, cron music downloader -->
