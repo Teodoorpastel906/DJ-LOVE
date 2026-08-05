@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Music state (personal)
+.music_state.json
+
+# Cookies (personal)
+.yt_cookies.txt
+
+# Spotify OAuth cache
+.spotify_oauth_cache
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
