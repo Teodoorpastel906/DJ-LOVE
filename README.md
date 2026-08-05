@@ -7,44 +7,53 @@
 
 <h1 align="center">🎧 DJ-LOVE</h1>
 <p align="center">
-  <b>自动下载 Spotify & SoundCloud 新增收藏 → MP3 320kbps · 按周归档 · 一次配置永久运行</b><br>
-  <sub>Auto-download your weekly Spotify & SoundCloud likes as 320kbps MP3 — set once, run forever.</sub>
+  <b>自动定时下载 Spotify & SoundCloud 收藏到本地 · MP3 320kbps · 按周归档</b><br>
+  <sub>Automated weekly download of your Spotify & SoundCloud likes to local storage — 320kbps MP3, organized by date.</sub>
 </p>
 
 ---
 
-## 💡 这是什么？ / What is this?
+## 💡 它做什么 / What It Does
 
-你每周在 Spotify 和 SoundCloud 上点了喜欢，**它自动帮你下载成 MP3**，按周分文件夹存好。
+你在 Spotify / SoundCloud 点喜欢的歌，**它每周自动下载到你电脑里**。不需要每次手动操作，配好一次就一直在后台跑。
 
-Liked a few tracks on Spotify or SoundCloud this week? **DJ-LOVE fetches them automatically** and saves them as 320kbps MP3s, organized by week.
+You like songs on Spotify or SoundCloud → **DJ-LOVE automatically downloads them to your local machine every week.** Set it up once, it runs forever in the background.
 
 ```
-~/Music/DJ-LOVE/
-├── 2026-08-10/
-│   ├── Adele - Hello.mp3
-│   ├── Flume - Rushing Back.mp3
-│   └── 📋 playlist.txt
-├── 2026-08-17/
-│   └── ...
-└── .state.json          # 去重 / dedup tracker
+你的操作                      DJ-LOVE 自动完成
+─────────                    ─────────────────
+🎧 周一～周日                   （什么都不用管）
+  在 Spotify 点心 ❤️
+  在 SoundCloud 点心 ❤️
+                              ⏰ 周一凌晨 3:00
+                              ↓ 扫描本周新收藏
+                              ↓ 下载 MP3 320kbps
+                              ↓ 按日期归档
+                              ↓ 生成歌单
+                              
+📁 电脑里就有了                  ✅ 完成
+  ~/Music/DJ-LOVE/
+  └── 2026-08-10/
+      ├── xxx - yyy.mp3
+      ├── ...
+      └── playlist.txt
 ```
 
 ---
 
 ## ✨ 特性 / Features
 
-| 特性 | 说明 |
-|------|------|
-| 🎵 **双平台** | Spotify + SoundCloud |
-| 📦 **MP3 320kbps** | ffmpeg 转码，最高质量 |
-| 🆕 **增量下载** | 只下载新收藏，不重复 |
+| 特性 / Feature | 说明 / Description |
+|---------------|-------------------|
+| ⏰ **定时自动** | 配好 cron，每周固定时间自动跑，不需人工 |
+| 🎵 **双平台** | Spotify 收藏 + SoundCloud 喜欢 |
+| 📦 **MP3 320kbps** | ffmpeg 最高质量转码 |
+| 🆕 **增量下载** | 只下载本周新收藏，不重复 |
 | 📅 **按周归档** | 每周一个文件夹，日期命名 |
-| ⏰ **全自动** | cron 定时，无需手动操作 |
-| 🏷️ **ID3 标签** | 封面、艺人、专辑自动嵌入 |
+| 🏷️ **ID3 标签** | 封面、艺人、专辑信息自动写入 |
 | 📋 **歌单导出** | 每期自动生成 TXT 歌单 |
-| 🔁 **智能去重** | 已下载的不再下载 |
-| 🪶 **轻量** | 纯 Python，无重型依赖 |
+| 🔁 **智能去重** | `.state.json` 追踪，绝不下重 |
+| 🪶 **轻量** | 纯 Python，无需数据库 |
 
 ---
 
